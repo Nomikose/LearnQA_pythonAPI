@@ -22,7 +22,7 @@ import requests
 # print(response.headers)
 
 # Изучаем cookie's
-payload = {"login": "secret_login", "password": "secret_pass2"}
+payload = {"login": "secret_login", "password": "secret_pass"}
 response1 = requests.post("https://playground.learnqa.ru/api/get_auth_cookie", data = payload)
 print(response1.text)
 print(response1.status_code)
