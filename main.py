@@ -1,9 +1,35 @@
+from json.decoder import JSONDecodeError
 import requests
 
 # Get запрос - нет тела, но могут быть переданы параметры в строке запроса через ?
 # payload = {"name": "Sam"}
 # response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
 # print(response.text)
+
+
+# Обрабатываем ошибку с парсингом ответа
+# payload = {"name": "Vanya"}
+# response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
+# print(response.text)
+#
+# response = requests.get("https://playground.learnqa.ru/api/hello", params={"name": "Jhon"})
+# parsed_response_text = response.json()
+# print(parsed_response_text["answer"])
+#
+# #Модулятор нашего исключения, закомментируй get_text и получишь исключение
+# #response = requests.get("https://playground.learnqa.ru/api/get_text")
+# print(response.text)
+#
+# try:
+#     parsed_response_text = response.json()
+#     print(parsed_response_text)
+# except JSONDecodeError:
+#     print("Response is not a JSON format")
+
+# Инфа внутри post'a
+# response = requests.post("https://playground.learnqa.ru/api/check_type", data={"param1": "value1"})
+# print(response.text)
+
 
 # Смотрим редирект по 301 коду ответа, а также вытаскиваем инфу из массива history
 # response = requests.post("https://playground.learnqa.ru/api/get_301", allow_redirects=True)
