@@ -12,19 +12,19 @@ import requests
 # response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
 # print(response.text)
 #
-# response = requests.get("https://playground.learnqa.ru/api/hello", params={"name": "Jhon"})
-# parsed_response_text = response.json()
-# print(parsed_response_text["answer"])
+response = requests.get("https://playground.learnqa.ru/api/hello", params={"name": "Jhon"})
+parsed_response_text = response.json()
+print(parsed_response_text["answer"])
 #
 # #Модулятор нашего исключения, закомментируй get_text и получишь исключение
 # #response = requests.get("https://playground.learnqa.ru/api/get_text")
 # print(response.text)
 #
-# try:
-#     parsed_response_text = response.json()
-#     print(parsed_response_text)
-# except JSONDecodeError:
-#     print("Response is not a JSON format")
+try:
+    parsed_response_text = response.json()
+    print(parsed_response_text)
+except JSONDecodeError:
+    print("Response is not a JSON format")
 
 # Инфа внутри post'a
 # response = requests.post("https://playground.learnqa.ru/api/check_type", data={"param1": "value1"})
@@ -48,18 +48,18 @@ import requests
 # print(response.headers)
 
 # Изучаем cookie's
-payload = {"login": "secret_login", "password": "secret_pass"}
-response1 = requests.post("https://playground.learnqa.ru/api/get_auth_cookie", data = payload)
-print(response1.text)
-print(response1.status_code)
-print(dict(response1.cookies))
-
-cookie_value = response1.cookies.get("auth_cookie")
-
-cookies = {}
-if cookie_value is not None:
-    cookies.update({"auth_cookie": cookie_value})
-
-response2 = requests.post("https://playground.learnqa.ru/api/check_auth_cookie", cookies = cookies)
-print(response2.text)
+# payload = {"login": "secret_login", "password": "secret_pass"}
+# response1 = requests.post("https://playground.learnqa.ru/api/get_auth_cookie", data = payload)
+# print(response1.text)
+# print(response1.status_code)
+# print(dict(response1.cookies))
+#
+# cookie_value = response1.cookies.get("auth_cookie")
+#
+# cookies = {}
+# if cookie_value is not None:
+#     cookies.update({"auth_cookie": cookie_value})
+#
+# response2 = requests.post("https://playground.learnqa.ru/api/check_auth_cookie", cookies = cookies)
+# print(response2.text)
 
