@@ -1,17 +1,17 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="json_parsing" type="PythonConfigurationType" factoryName="Python" singleton="true" nameIsGenerated="true">
+  <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" singleton="true" nameIsGenerated="true">
     <module name="api_test" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
       <env name="PYTHONUNBUFFERED" value="1" />
     </envs>
-    <option name="SDK_HOME" value="C:\Users\Dell\PycharmProjects\api_test_s1\venv\Scripts\python.exe" />
+    <option name="SDK_HOME" value="C:\Users\Dell\PycharmProjects\LearnQA_pythonAPI\venv\Scripts\python.exe" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
-    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/json_parsing.py" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
     <option name="PARAMETERS" value="" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
