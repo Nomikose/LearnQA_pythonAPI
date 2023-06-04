@@ -1,6 +1,7 @@
 from json.decoder import JSONDecodeError
 import requests
 
+<<<<<<< HEAD
 # Get запрос - нет тела, но могут быть переданы параметры в строке запроса через ?
 # payload = {"name": "Sam"}
 # response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
@@ -63,3 +64,24 @@ except JSONDecodeError:
 # response2 = requests.post("https://playground.learnqa.ru/api/check_auth_cookie", cookies = cookies)
 # print(response2.text)
 
+=======
+# payload = {"name": "User"}
+# response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
+# print(response.text)
+
+# response = requests.get("https://playground.learnqa.ru/api/hello", params={"name": "User"})
+# parsed_response_text = response.json()
+# print(parsed_response_text["answer"])
+
+# response = requests.get("https://playground.learnqa.ru/api/get_text")
+# print(response.text)
+
+# try:
+#     parsed_response_text = response.json()
+#     print(parsed_response_text)
+# except JSONDecodeError:
+#     print("Response is not a JSON format")
+
+response = requests.post("https://playground.learnqa.ru/api/check_type", data={"param1": "value1"})
+print(response.text)
+>>>>>>> 423d22c3fae17300ad425fdcf8ea858fe04c1af4
