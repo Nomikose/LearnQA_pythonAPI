@@ -42,7 +42,7 @@ print(second_response.url)
 # print(response.headers)
 
 # Изучаем cookie's
-payload = {"login": "secret_login", "password": "secret_pass"}
+payload = {"login": "secret_login", "password": "secret_pass2"}
 response1 = requests.post("https://playground.learnqa.ru/api/get_auth_cookie", data = payload)
 print("Task №5:")
 print(response1.text)
@@ -57,9 +57,12 @@ cookies = {"auth_cookie": cookie_value}
 if cookie_value is not None:
     cookies.update({"auth_cookie": cookie_value})
     print(f"cookie_value = {cookie_value}")
+else:
+    print("Cookie value not found")
 
-# response2 = requests.post("https://playground.learnqa.ru/api/check_auth_cookie", cookies = cookies)
-# print(response2.text)
+response2 = requests.post("https://playground.learnqa.ru/api/check_auth_cookie", cookies = cookies)
+print("Task №6:")
+print(response2.text)
 
 
 # payload = {"name": "User"}
