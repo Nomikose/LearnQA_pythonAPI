@@ -3,6 +3,11 @@ import requests
 
 # HEAD
 # Get запрос - нет тела, но могут быть переданы параметры в строке запроса через ?
+
+payload = {"name":"user"}
+response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
+print(response.text)
+print("===========")
 # payload = {"name": "Sam"}
 # response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
 # print(response.text)
