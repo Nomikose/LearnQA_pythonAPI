@@ -4,28 +4,18 @@ import requests
 # HEAD
 # Get запрос - нет тела, но могут быть переданы параметры в строке запроса через ?
 
-payload = {"name":"user"}
+payload = {"name": "Sam"}
 response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
+print("Task №1:")
 print(response.text)
-print("===========")
-# payload = {"name": "Sam"}
-# response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
-# print(response.text)
 
 
-# Обрабатываем ошибку с парсингом ответа
-# payload = {"name": "Vanya"}
-# response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
+# Модулятор нашего исключения, раскомментируй get_text и получишь исключение
+response = requests.get("https://playground.learnqa.ru/api/hello", params={"name": "Vasya"})
+# response = requests.get("https://playground.learnqa.ru/api/get_text")
+print("Task №2:")
 # print(response.text)
-#
-response = requests.get("https://playground.learnqa.ru/api/hello", params={"name": "Jhon"})
-parsed_response_text = response.json()
-print(parsed_response_text["answer"])
-#
-# #Модулятор нашего исключения, закомментируй get_text и получишь исключение
-# #response = requests.get("https://playground.learnqa.ru/api/get_text")
-# print(response.text)
-#
+
 try:
     parsed_response_text = response.json()
     print(parsed_response_text)
@@ -87,6 +77,6 @@ except JSONDecodeError:
 # except JSONDecodeError:
 #     print("Response is not a JSON format")
 
-response = requests.post("https://playground.learnqa.ru/api/check_type", data={"param1": "value1"})
-print(response.text)
+# response = requests.post("https://playground.learnqa.ru/api/check_type", data={"param1": "value1"})
+# print(response.text)
 # 423d22c3fae17300ad425fdcf8ea858fe04c1af4
