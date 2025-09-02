@@ -2,7 +2,7 @@ from json.decoder import JSONDecodeError
 import requests
 
 # HEAD
-# Get запрос - нет тела, но могут быть переданы параметры в строке запроса через ?
+# Get запрос - нет тела, но могут быть переданы параметры в строке запроса через ? : exaple.com?param1=value1
 
 payload = {"name": "Sam"}
 response = requests.get("https://playground.learnqa.ru/api/hello", params=payload)
@@ -22,40 +22,42 @@ try:
 except JSONDecodeError:
     print("Response is not a JSON format")
 
-# Инфа внутри post'a
-# response = requests.post("https://playground.learnqa.ru/api/check_type", data={"param1": "value1"})
-# print(response.text)
-
 
 # Смотрим редирект по 301 коду ответа, а также вытаскиваем инфу из массива history
-# response = requests.post("https://playground.learnqa.ru/api/get_301", allow_redirects=True)
-# # print(response.status_code)
-# # print(response.text)
-#
-# first_response = response.history[0]
-# second_response = response
-# print(first_response.url)
-# print(second_response.url)
+response = requests.post("https://playground.learnqa.ru/api/get_301", allow_redirects=True)
+print("Task №3:")
+print(response.status_code)
+# print(response.text)
+
+first_response = response.history[0]
+second_response = response
+print(first_response.url)
+print(second_response.url)
 
 # Смотрим заголовки
 # headers = {"some_header": "123"}
 # response = requests.get("https://playground.learnqa.ru/api/show_all_headers", headers = headers)
+# print("Task №4:")
 # print(response.text)
 # print(response.headers)
 
 # Изучаем cookie's
-# payload = {"login": "secret_login", "password": "secret_pass"}
-# response1 = requests.post("https://playground.learnqa.ru/api/get_auth_cookie", data = payload)
-# print(response1.text)
-# print(response1.status_code)
+payload = {"login": "secret_login", "password": "secret_pass"}
+response1 = requests.post("https://playground.learnqa.ru/api/get_auth_cookie", data = payload)
+print("Task №5:")
+print(response1.text)
+print(response1.status_code)
 # print(dict(response1.cookies))
-#
-# cookie_value = response1.cookies.get("auth_cookie")
-#
-# cookies = {}
-# if cookie_value is not None:
-#     cookies.update({"auth_cookie": cookie_value})
-#
+# print(response1.headers)
+
+
+cookie_value = response1.cookies.get("auth_cookie")
+cookies = {"auth_cookie": cookie_value}
+
+if cookie_value is not None:
+    cookies.update({"auth_cookie": cookie_value})
+    print(f"cookie_value = {cookie_value}")
+
 # response2 = requests.post("https://playground.learnqa.ru/api/check_auth_cookie", cookies = cookies)
 # print(response2.text)
 
